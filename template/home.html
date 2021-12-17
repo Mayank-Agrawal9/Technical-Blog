@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title %} Welcome To Technical Blog {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h4><marquee behavior="scroll" direction="left" loop="1" scrollamount="12" style="margin-top: 4%;">Welcome to Technical Blog!</marquee></h4>
+    {%for p in posts %}
+    <div class="col-md-6">
+        <img src="/media/{{p.image}}" class="img-fluid img-thumbnail mt-3" alt=""  style="border-radius: 50px;" >
+    </div>
+    <p style="margin-top: 1.5%;">{{p.content |truncatewords:60 | safe}}</p>
+    <a href="/blog/{{p.url}}" class="btn btn-warning">Read More 🖐️ </a>
+   
+    <br>
+    <hr style="width:100%; color: red;">
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

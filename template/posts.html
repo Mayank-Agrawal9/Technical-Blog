@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %} POST {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 style="margin-top: 5%;">{{post.title}}</h1>
+    <p>({{post.Category.title}})</p>
+    <img src="/media/{{post.image}}" class="img-fluid" alt="" style="border-radius: 50px;">
+    <br>
+    <p style="margin-top: 2%;">{{post.content | safe}}</p>
+    <hr style="width:100%; color: red;">
+</div>
+
+
+{% endblock %}
